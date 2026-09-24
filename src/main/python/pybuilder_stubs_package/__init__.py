@@ -8,7 +8,9 @@ from pybuilder.utils import jp
 
 @init
 def init_stubs_plugin(project):
-    project.plugin_depends_on("mypy", "~=0.980.0")
+    # mypy < 1.x imports ast.Num & co., removed in Python 3.14. 1.17 is the first
+    # release with cp314 wheels; stubgen output verified on 3.10 and 3.14 up to 2.x.
+    project.plugin_depends_on("mypy", ">=1.17,<3")
     project.plugin_depends_on("twine", ">=1.15.0")
     project.plugin_depends_on("wheel", ">=0.34.0")
     project.plugin_depends_on("setuptools", ">=38.6.0")

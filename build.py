@@ -19,7 +19,7 @@ summary = "PyBuilder plugin that creates \"*-stubs\" package for your project us
 authors = [Author('Adam Chýlek', 'adam.chylek@amitia-ai.com')]
 version = read_from('VERSION')
 license = 'MIT'
-url = 'https://github.com/chylek/pybuilder-stubs-package'
+url = 'https://github.com/AndreKaba/pybuilder-stubs-package'
 
 classifiers = [
     # How mature is this project? Common values are
@@ -53,7 +53,7 @@ def set_properties(project):
     build_dir = os.path.join("releases", "$name-$version")
     project.set_property("dir_dist", build_dir)
     project.set_property("distutils_classifiers", classifiers)
-    project.set_property("distutils_commands", ["sdist", "bdist_egg", "bdist_wheel"])
+    project.set_property("distutils_commands", ["sdist", "bdist_wheel"])
 
     project.set_property("copy_resources_glob", ["MANIFEST.in", "VERSION", "README.md", "LICENSE"])
     project.set_property("copy_resources_target", "${dir_dist}")

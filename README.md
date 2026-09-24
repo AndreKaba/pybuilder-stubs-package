@@ -1,5 +1,10 @@
 # PyBuilder plugin that creates *-stubs package for your project
 
+Amitia-maintained fork of
+[chylek/pybuilder-stubs-package](https://github.com/chylek/pybuilder-stubs-package),
+published to the Amitia package index only. 0.2.0 moves to mypy 1.x so stub
+generation works on Python 3.14.
+
 This plugin adds `stubs_publish` and `stubs_upload` tasks that you can use in
 your build script.
 
@@ -36,5 +41,3 @@ boolean, adds the `--include-private` flag to `stubgen` if set to `True`.
 
 boolean, adds the `--include-docstrings` flag to `stubgen` if set to `True`.
 Stubgen then includes docstrings for classes and methods in the stubs.
-
-*Note that this flag is not merged yet ([PR #13284](https://github.com/python/mypy/pull/13284))*
